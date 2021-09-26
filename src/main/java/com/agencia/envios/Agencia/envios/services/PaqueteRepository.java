@@ -11,4 +11,6 @@ public interface PaqueteRepository extends JpaRepository<Paquete, Long> {
     List<Paquete> findByIdDestinatario(int idDestinatario);
     List<Paquete> findByCiudadDestino(String ciudadDestino);
     List<Paquete> findByCiudadOrigen(String ciudadOrigen);
+    List<Paquete> findByEstado(Paquete.Estado estado);
+    List<Paquete> findByTamano(Paquete.Tamano tamano);
 }

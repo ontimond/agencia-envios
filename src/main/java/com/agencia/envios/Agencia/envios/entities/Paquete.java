@@ -7,13 +7,13 @@ import javax.validation.constraints.NotNull;
 @Table(name = "paquete")
 public class Paquete {
 
-    enum Tamano {
+    public enum Tamano {
         PEQUENO,
         MEDIANO,
         GRANDE
     }
 
-    enum Estado {
+    public enum Estado {
         INGRESADO,
         CENTRO_DISTRIBUCION,
         DISTRIBUCION,
@@ -42,7 +42,7 @@ public class Paquete {
     private Double peso;
     @NotNull
     private Tamano tamano;
-    @NotNull
+    @NotNull(groups = UpdatePaqueteChecks.class)
     private Estado estado = Estado.INGRESADO;
     @NotNull
     private Double precio;
